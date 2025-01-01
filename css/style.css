@@ -1,0 +1,77 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+h2{
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+.container{
+    position: relative;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.circle1{
+    height: 500px;
+    width: 500px;
+    background-color: lightblue;
+}
+.circle2{
+    height: 400px;
+    width: 400px;
+    background-color: pink;
+    top: 50px;
+    left: 50px;
+}
+.circle3{
+    height: 300px;
+    width: 300px;
+    background-color: brown;
+    top: 100px;
+    left: 100px;
+}
+.circle4{
+    height: 200px;
+    width: 200px;
+    background-color: blueviolet;
+    top: 150px;
+    left: 150px;
+}
+.scorebox{
+    border-radius: 25%;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: azure;
+    height: 80px;
+    width: 80px;
+    top: 210px;
+    left: 210px;
+    text-align: center;
+    color: black;
+    font-size: 3em;
+    padding-top: 10px;
+}
+.button{
+    background-color: antiquewhite;
+    color: green;
+    border: 0;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    top: 550px;
+    position: relative;
+    font-weight: 600;
+}
+.light{
+    opacity: 0.4;
+}
+
