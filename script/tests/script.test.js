@@ -1,4 +1,4 @@
-const {game, newGame, showScore, addTurn, lightOn, showTurns, playerTurn} = require("../script");
+const {game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn} = require("../script");
 
 jest.spyOn(window, "alert").mockImplementation(() =>{});
 
@@ -76,7 +76,7 @@ describe("game object contains correct keys", ()=>{
         });
         test("should add correct class to light up the buttons", () => {
             let button = document.getElementById(game.currentGame[0]);
-            lightOn(game.currentGame[0]);
+            lightsOn(game.currentGame[0]);
             expect(button.classList).toContain("light");
         });
         test("showTurns should update game.turnNumber", () => {
@@ -93,6 +93,10 @@ describe("game object contains correct keys", ()=>{
             game.playerMoves.push("wrong");
             playerTurn();
             expect(window.alert).toBeCalledWith("Wrong Move!");
+        });
+        test ("should toggle turnInProgress to true", () => {
+            showTurns();
+            expect(game.turnInProgress).toBe(true);
         });
     });
     

@@ -26,25 +26,27 @@ function newGame(){
 function addTurn(){
     game.playerMoves = [];
     game.currentGame.push(game.choices[(Math.floor(Math.random()*4))]);
-    //showTruns();
+    showTurns();
 }
 
 function showScore(){
     document.getElementById("score").innerText = game.score;
 }
-function lightOn(circ){
+function lightsOn(circ){
     document.getElementById(circ).classList.add("light");
     setTimeout(() => {
         document.getElementById(circ).classList.remove("light");
     }, 400);
 }
 function showTurns(){
+    game.turnInProgress = true;
     game.turnNumber = 0;
     let turns = setInterval(() => {
         lightOn(game.currentGame[game.turnNumber]);
         game.turnNumber++;
         if (game.turnNumber >= game.currentGame.length){
             clearInterval(turns);
+            game.turnInProgress = false;
         }
     }, 800);
 }
@@ -52,7 +54,7 @@ function showTurns(){
 function playerTurn(){
     let i = game.playerMoves.length - 1;
     if (game.currentGame[i] === game.playerMoves[i]){
-        if (game.currentGame.length==game.playerMoves.length){
+        if (game.currentGame.length == game.playerMoves.length){
             game.score++;
             showScore();
             addTurn();
@@ -64,4 +66,4 @@ function playerTurn(){
     }
 
 
-module.exports = {game, newGame, showScore, addTurn, lightOn, showTurns, playerTurn};
+module.exports = {game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn};
