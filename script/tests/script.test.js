@@ -37,8 +37,8 @@ describe("game object contains correct keys", ()=>{
         test("should set game score to zero", () => {
             expect(game.score).toEqual(0);
         });
-        test("should clear the computer sequence array",  () => {
-            expect(game.currentGame.length).toBe(0);
+        test("should be one move in computer's game array",  () => {
+            expect(game.currentGame.length).toBe(1);
         });
         test("should clear the player moves array", () => {
             expect(game.playerMoves.length).toBe(0);
